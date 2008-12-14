@@ -1,7 +1,7 @@
 #
 # Copyright (C) XXXXX 2001 - All rights reserved
 #
-# TWiki extension XXXXX
+# Foswiki:: extension XXXXX
 #
 # This program is free software; you can redistribute it and/or
 # modify it under the terms of the GNU General Public License
@@ -15,7 +15,7 @@
 # http://www.gnu.org/copyleft/gpl.html
 #
 
-package TWiki::Plugins::TreePlugin::Node;
+package Foswiki::::Plugins::TreePlugin::Node;
 
 use strict;
 
@@ -66,7 +66,7 @@ sub add_child {
     my ( $this, $child ) = @_;
 
     #   should one check for cirrect type?
-    #   return 0 unless (isa($child, 'TWiki::Plugins::TreePlugin::Node'));
+    #   return 0 unless (isa($child, 'Foswiki::::Plugins::TreePlugin::Node'));
     $child->parent($this);
     push @{ $this->{_children} }, $child;
 }
@@ -117,7 +117,7 @@ sub toString {
 
 sub toHTML {
     my ($this) = shift;
-    #SL: BTW I'm not sure that function is being used at all anymore looks like TWikiNode::toHTMLFormat is being used instead
+    #SL: BTW I'm not sure that function is being used at all anymore looks like Foswiki::Node::toHTMLFormat is being used instead
     #This make sure we don't render a node more than once
     #thus preventing endless loop when dealing with inconsitant relationship     
     if ($this->{_rendered})

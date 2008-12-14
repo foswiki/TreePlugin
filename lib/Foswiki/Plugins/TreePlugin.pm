@@ -18,19 +18,19 @@
 # =========================
 
 # =========================
-package TWiki::Plugins::TreePlugin;
+package Foswiki::Plugins::TreePlugin;
 
 use strict;
 use warnings;
 
-use TWiki::Func;
+use Foswiki::Func;
 
-use TWiki::Plugins::TreePlugin::TWikiNode;
-use TWiki::Plugins::TreePlugin::ListNodeFormatter;
-use TWiki::Plugins::TreePlugin::ColorNodeFormatter;
-use TWiki::Plugins::TreePlugin::FormatOutlineNodeFormatter;
-use TWiki::Plugins::TreePlugin::HOutlineNodeFormatter;
-use TWiki::Plugins::TreePlugin::ImgNodeFormatter;
+use Foswiki::Plugins::TreePlugin::TWikiNode;
+use Foswiki::Plugins::TreePlugin::ListNodeFormatter;
+use Foswiki::Plugins::TreePlugin::ColorNodeFormatter;
+use Foswiki::Plugins::TreePlugin::FormatOutlineNodeFormatter;
+use Foswiki::Plugins::TreePlugin::HOutlineNodeFormatter;
+use Foswiki::Plugins::TreePlugin::ImgNodeFormatter;
 
 # =========================
 use vars qw(
@@ -48,33 +48,33 @@ sub initPlugin {
     ( $gTopic, $gWeb, $user, $installWeb ) = @_;
 
     # check for Plugins.pm versions
-    if ( $TWiki::Plugins::VERSION < 1 ) {
-        &TWiki::Func::writeWarning("Version mismatch between TreePlugin and Plugins.pm");
+    if ( $Foswiki::Plugins::VERSION < 1 ) {
+        &Foswiki::Func::writeWarning("Version mismatch between TreePlugin and Plugins.pm");
         return 0;
     }
 
 # Get plugin preferences, the variable defined by:          * Set EXAMPLE = ...
-# $exampleCfgVar = &TWiki::Prefs::getPreferencesValue( "TreePlugin_EXAMPLE" ) || "default";
+# $exampleCfgVar = &Foswiki::Prefs::getPreferencesValue( "TreePlugin_EXAMPLE" ) || "default";
 
     # Get plugin debug flag
-    #$debug = TWiki::Func::getPreferencesFlag( "\U$pluginName\E_DEBUG" );
-    $debug = $TWiki::cfg{Plugins}{$pluginName}{Debug} || 0;
-    $noCache = $TWiki::cfg{Plugins}{$pluginName}{NoCache} || 0;
-    $workAreaDir = TWiki::Func::getWorkArea($pluginName);
+    #$debug = Foswiki::Func::getPreferencesFlag( "\U$pluginName\E_DEBUG" );
+    $debug = $Foswiki::cfg{Plugins}{$pluginName}{Debug} || 0;
+    $noCache = $Foswiki::cfg{Plugins}{$pluginName}{NoCache} || 0;
+    $workAreaDir = Foswiki::Func::getWorkArea($pluginName);
     
 
-    &TWiki::Func::writeDebug("installWeb: $installWeb") if $debug;
+    &Foswiki::Func::writeDebug("installWeb: $installWeb") if $debug;
 
-    my $cgi = &TWiki::Func::getCgiQuery();
+    my $cgi = &Foswiki::Func::getCgiQuery();
     if ( !$cgi ) {
         return 0;
     }
     
-    TWiki::Func::registerTagHandler( 'TREEVIEW', \&HandleTreeTag );
-    TWiki::Func::registerTagHandler( 'TREE', \&HandleTreeTag );
+    Foswiki::Func::registerTagHandler( 'TREEVIEW', \&HandleTreeTag );
+    Foswiki::Func::registerTagHandler( 'TREE', \&HandleTreeTag );
 
     # Plugin correctly initialized
-    &TWiki::Func::writeDebug("- TWiki::Plugins::TreePlugin::initPlugin( $gWeb.$gTopic ) is OK") if $debug;
+    &Foswiki::Func::writeDebug("- Foswiki::Plugins::TreePlugin::initPlugin( $gWeb.$gTopic ) is OK") if $debug;
     return 1;
 }
 
@@ -95,7 +95,7 @@ sub HandleTreeTag
     
     #### Initializations 
 
-    my $cgi   = &TWiki::Func::getCgiQuery();
+    my $cgi   = &Foswiki::Func::getCgiQuery();
     my $plist = $cgi->query_string();
     $plist .= "\&" if $plist;
     my $CurrUrl = $cgi->url . $cgi->path_info() . "?" . $plist;
@@ -182,7 +182,7 @@ sub HandleTreeTag
     if ($doBookView) {
         #SL: disable bookview until we fix it 
         return "%RED%bookview is broken in this version of $installWeb.TreePlugin.%ENDCOLOR%"
-        #$formatter->data( "format", &TWiki::Func::readTemplate("booktree") );
+        #$formatter->data( "format", &Foswiki::Func::readTemplate("booktree") );
     }
     else {
 
@@ -215,7 +215,7 @@ sub HandleTreeTag
     my %nodes = ();
 
     
-    &TWiki::Func::writeDebug("First loop") if $debug;    
+    &Foswiki::Func::writeDebug("First loop") if $debug;    
     
     #### Parse SEARCH results and build up tree structure    
 
@@ -225,7 +225,7 @@ sub HandleTreeTag
     #   * Populate hash of nodes/topics
     foreach ( split /\n/, $search ) {
         my ( $nodeWeb, $nodeTopic, $nodeParent, $nodeFormat ) = split (/\|/,$_,4);    # parse out node data
-        &TWiki::Func::writeDebug("SEARCH LINE: $nodeWeb, $nodeTopic, $nodeFormat") if ($debug==2);  
+        &Foswiki::Func::writeDebug("SEARCH LINE: $nodeWeb, $nodeTopic, $nodeFormat") if ($debug==2);  
         my $nodeId = "$nodeWeb.$nodeTopic";
         
         #If no node format default to the formatter's format     
@@ -256,14 +256,14 @@ sub HandleTreeTag
     }
     
     
-    &TWiki::Func::writeDebug("Create root") if $debug;      
+    &Foswiki::Func::writeDebug("Create root") if $debug;      
     #SL: to simplify we could even systematically create the web root, that would do no arm would save a few test... why not
     #If no root topic specified it means we are rendering web tree therefore create a fake web root object 
     my $webRoot = $rootTopicId eq $RootLabel ? createTWikiNode( $RootLabel, \%nodes ) : undef;      
     #At this stage the root must be in the hash, if not just quite (fake web root or actual topic root) 
     return '' unless $nodes{$rootTopicId};  # nope, the wanted node ain't here "<!-- No Topic -->"
 
-    &TWiki::Func::writeDebug("Second loop") if $debug;    
+    &Foswiki::Func::writeDebug("Second loop") if $debug;    
 
     #Second loop:
     #   * Create nodes relationship
@@ -290,7 +290,7 @@ sub HandleTreeTag
     
     #### Tree rendering
 
-    &TWiki::Func::writeDebug("Rendering..") if $debug;    
+    &Foswiki::Func::writeDebug("Rendering..") if $debug;    
 
     $webRoot->name(" ") if (defined $webRoot);    # If using fake root change root's name so it don't show up, hack
     my $root= defined $webRoot ? $webRoot : $nodes{$rootTopicId}; #Get the root object fake web root or actual topic root 
@@ -298,7 +298,7 @@ sub HandleTreeTag
     # format the tree & parse TWiki tags and rendering
     my $renderedTree = $root->toHTMLFormat($formatter);
 
-    &TWiki::Func::writeDebug("Rendering done!") if $debug;    
+    &Foswiki::Func::writeDebug("Rendering done!") if $debug;    
     
     #Workaround for our issues of trailing new lines
     $renderedTree=~s/\s*$//so;
@@ -324,7 +324,7 @@ sub HandleTreeTag
         $renderedTree =~ s/\$Index/$Index++;$Index/egi;
     }
     
-    &TWiki::Func::writeDebug($renderedTree) if ($debug==2);    
+    &Foswiki::Func::writeDebug($renderedTree) if ($debug==2);    
     
     return $renderedTree;
 }
@@ -346,21 +346,21 @@ sub createCache
 	
 	my $cache='';
 	
-	TWiki::Func::writeDebug( "- ${pluginName} Creating cache...")  if $debug;
+	Foswiki::Func::writeDebug( "- ${pluginName} Creating cache...")  if $debug;
 
 	#Create our file cache if needed
     $aWeb =~ s/\//./g;
     my $cacheFileName = "$workAreaDir/$aWeb.tree";
     if (-e $cacheFileName)
     	{
-		TWiki::Func::writeDebug( "- ${pluginName} Cache already exists!")  if $debug;
+		Foswiki::Func::writeDebug( "- ${pluginName} Cache already exists!")  if $debug;
 	    return;
     	}	
 		
 	foreach my $nodeId (sort keys %$nodesRef)
 		{        
 		my $node = $nodesRef->{$nodeId};	
-        #TWiki::Func::writeDebug( "- ${pluginName} Building cache for: " . $node->data('topic') ) if $debug;
+        #Foswiki::Func::writeDebug( "- ${pluginName} Building cache for: " . $node->data('topic') ) if $debug;
 		if (!defined $webRoot || $node!=$webRoot) #no point creating cache for the fake web root
 			{
 			$cache.=$node->data('topic');
@@ -374,8 +374,8 @@ sub createCache
     		}	
 		}
 		
-    TWiki::Func::saveFile( $cacheFileName, $cache );			
-	TWiki::Func::writeDebug( "- ${pluginName} Cache created!")  if $debug;
+    Foswiki::Func::saveFile( $cacheFileName, $cache );			
+	Foswiki::Func::writeDebug( "- ${pluginName} Cache created!")  if $debug;
 	}
 
 =pod
@@ -423,25 +423,25 @@ sub fetchCache
 	
     $aWeb =~ s/\//./g;
     my $cacheFileName = "$workAreaDir/$aWeb.tree";
-    TWiki::Func::writeDebug( "- ${pluginName} Checking cache file: $cacheFileName" ) if $debug;
+    Foswiki::Func::writeDebug( "- ${pluginName} Checking cache file: $cacheFileName" ) if $debug;
     unless (-e $cacheFileName)
     	{
 	    #no cache yet, try again next time	
 	    return '';
     	}	
 			
-    my @lines=split /\n/, TWiki::Func::readFile( $cacheFileName);
+    my @lines=split /\n/, Foswiki::Func::readFile( $cacheFileName);
     foreach my $line(@lines)
     	{
-	    #TWiki::Func::writeDebug( "- ${pluginName} Checking cache line" ) if $debug;	
+	    #Foswiki::Func::writeDebug( "- ${pluginName} Checking cache line" ) if $debug;	
 	    if ($line=~ /^$aTopic/)
 	    	{
-		    TWiki::Func::writeDebug( "- ${pluginName} Hit the cache" ) if $debug;
+		    Foswiki::Func::writeDebug( "- ${pluginName} Hit the cache" ) if $debug;
 		    return $line;
 	    	}	    		
     	}
     
-    TWiki::Func::writeDebug( "- ${pluginName} Won't hit the cache, something is very wrong!" ) if $debug;	
+    Foswiki::Func::writeDebug( "- ${pluginName} Won't hit the cache, something is very wrong!" ) if $debug;	
     return '';		
 	}
 	
@@ -450,12 +450,12 @@ sub fetchCache
 Create a new node object and add it to the given hash 
 @param [in] scalar node id
 @param [in] scalar hash reference
-@return Pointer to TWiki::Plugins::TreePlugin::TWikiNode object
+@return Pointer to Foswiki::Plugins::TreePlugin::TWikiNode object
 =cut
 
 sub createTWikiNode {
     my ( $id, $hash ) = @_;
-    my $node = TWiki::Plugins::TreePlugin::TWikiNode->new($id);
+    my $node = Foswiki::Plugins::TreePlugin::TWikiNode->new($id);
     $hash->{$id} = $node;
     return $node;
 }
@@ -495,9 +495,9 @@ sub doSEARCH {
     #	ok. make the topic list and return it  (use this routine for now)
     #   hopefully there'll be an optimized one later    
     my $search="%SEARCH{search=\"$searchVal\" web=\"$searchWeb\" format=\"$searchTmpl\" scope=\"$searchScope\" regex=\"on\" nosearch=\"on\" nototal=\"on\" noempty=\"on\" excludetopic=\"$excludetopic\" topic=\"$includetopic\"}%";
-    &TWiki::Func::writeDebug($search) if $debug;    
+    &Foswiki::Func::writeDebug($search) if $debug;    
 
-    return TWiki::Func::expandCommonVariables($search);
+    return Foswiki::Func::expandCommonVariables($search);
 }
 
 =pod
@@ -534,35 +534,35 @@ sub setFormatter {
     # -- look up how to do case in Perl! :) SL: lol, I have no idea myself
     if ( $name eq "ullist" ) {
         $formatter =
-          new TWiki::Plugins::TreePlugin::ListNodeFormatter( "<ul> ",
+          new Foswiki::Plugins::TreePlugin::ListNodeFormatter( "<ul> ",
             " </ul>" );
     }
     elsif ( $name =~ m/coloroutline(.*)/ ) {
         my $attrs = $1;
         $attrs =~ s/^://;
-        $formatter = new TWiki::Plugins::TreePlugin::ColorNodeFormatter($attrs);
+        $formatter = new Foswiki::Plugins::TreePlugin::ColorNodeFormatter($attrs);
     }
     elsif ( $name =~ m/imageoutline(.*)/ ) {
         my $attrs = $1;
         $attrs =~ s/^://;
         $formatter =
-          new TWiki::Plugins::TreePlugin::ImgNodeFormatter(
+          new Foswiki::Plugins::TreePlugin::ImgNodeFormatter(
             split( /:/, $attrs ) );
     }
     elsif ( $name eq "ollist" ) {
         $formatter =
-          new TWiki::Plugins::TreePlugin::ListNodeFormatter( "<ol> ",
+          new Foswiki::Plugins::TreePlugin::ListNodeFormatter( "<ol> ",
             " </ol>" );
     }
     elsif ( $name eq "hlist" ) {
         $formatter =
-          new TWiki::Plugins::TreePlugin::HOutlineNodeFormatter(
+          new Foswiki::Plugins::TreePlugin::HOutlineNodeFormatter(
             "<h\$level> \$outnum \$web.\$topic </h\$level> \$summary");
     }
     else {
         $name = "outline";
         $formatter =
-          new TWiki::Plugins::TreePlugin::FormatOutlineNodeFormatter(
+          new Foswiki::Plugins::TreePlugin::FormatOutlineNodeFormatter(
             "\$outnum \$web.\$topic <br \/>");
     }
 
@@ -581,7 +581,7 @@ sub afterSaveHandler {
     # do not uncomment, use $_[0], $_[1]... instead
     ### my ( $text, $topic, $web ) = @_;
 
-    TWiki::Func::writeDebug( "- ${pluginName}::beforeSaveHandler( $_[2].$_[1] )" ) if $debug;
+    Foswiki::Func::writeDebug( "- ${pluginName}::beforeSaveHandler( $_[2].$_[1] )" ) if $debug;
     
     #Invalidate our cache for that web
     my $aWeb = $_[2];

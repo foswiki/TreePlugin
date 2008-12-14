@@ -1,7 +1,7 @@
 #
 # Copyright (C) XXXXXX 2001 - All rights reserved
 #
-# TWiki extension XXXXX
+# Foswiki:: extension XXXXX
 #
 # This program is free software; you can redistribute it and/or
 # modify it under the terms of the GNU General Public License
@@ -15,8 +15,8 @@
 # http://www.gnu.org/copyleft/gpl.html
 #
 
-package TWiki::Plugins::TreePlugin::OutlineNodeFormatter;
-use base qw(TWiki::Plugins::TreePlugin::NodeFormatter);
+package Foswiki::::Plugins::TreePlugin::OutlineNodeFormatter;
+use base qw(Foswiki::::Plugins::TreePlugin::NodeFormatter);
 
 use vars qw($RootOnum $OnumDelim);
 
@@ -82,7 +82,7 @@ sub formatNode {
     return "" if ( ! $this->isInsideLevelBounds( $level ) );
 
     # no formatting applied
-    return &TWiki::Plugins::TreePlugin::getLinkName($node);
+    return &Foswiki::::Plugins::TreePlugin::getLinkName($node);
 }
 
 sub formatBranch {

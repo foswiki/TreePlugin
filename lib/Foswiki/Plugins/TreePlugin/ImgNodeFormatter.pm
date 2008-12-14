@@ -1,7 +1,7 @@
 #
 # Copyright (C) Slava Kozlov 2002 - All rights reserved
 #
-# TWiki extension TWiki::Plugins::TreePlugin::ImgNodeFormatter
+# Foswiki:: extension Foswiki::::Plugins::TreePlugin::ImgNodeFormatter
 #
 # This program is free software; you can redistribute it and/or
 # modify it under the terms of the GNU General Public License
@@ -15,12 +15,12 @@
 # http://www.gnu.org/copyleft/gpl.html
 #
 
-package TWiki::Plugins::TreePlugin::ImgNodeFormatter;
-use base qw(TWiki::Plugins::TreePlugin::FormatOutlineNodeFormatter);
+package Foswiki::::Plugins::TreePlugin::ImgNodeFormatter;
+use base qw(Foswiki::::Plugins::TreePlugin::FormatOutlineNodeFormatter);
 
-use TWiki::Plugins::TreePlugin;
+use Foswiki::::Plugins::TreePlugin;
 
-#use TWiki::Func;
+#use Foswiki::::Func;
 
 # different ways to use this formatting, maybe these should be subclasses?
 
@@ -107,7 +107,7 @@ sub new {
     # get a default format
     $this->data( "format", DEF_FORMATS->{$mode} );
 
-    #TWiki::Func::writeDebug("format($mode): ", DEF_FORMATS->{$mode});
+    #Foswiki::::Func::writeDebug("format($mode): ", DEF_FORMATS->{$mode});
     return $this;
 }
 
@@ -174,7 +174,7 @@ sub formatNode {
         $sub = $a;
     }
 
-    # ick; otheriwse TWiki does weird stuff
+    # ick; otheriwse Foswiki:: does weird stuff
     $sub = "<!-- -->" unless $sub;
 
     # let superclass do most of the formatting
@@ -217,7 +217,7 @@ sub formatImage {
         my $dir = IMG_DIR_TEMPL;
 
 # (we should probably make the following sub once per formatter, not once per image)
-        $dir =~ s/\$installWeb/TWiki::Plugins::TreePlugin::installWeb()/geo;
+        $dir =~ s/\$installWeb/Foswiki::::Plugins::TreePlugin::installWeb()/geo;
         $im = $dir . $im;
     }
 

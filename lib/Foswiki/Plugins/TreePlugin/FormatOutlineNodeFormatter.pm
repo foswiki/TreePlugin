@@ -1,7 +1,7 @@
 #
 # Copyright (C) XXXXXX 2001 - All rights reserved
 #
-# TWiki extension XXXXX
+# Foswiki:: extension XXXXX
 #
 # This program is free software; you can redistribute it and/or
 # modify it under the terms of the GNU General Public License
@@ -15,15 +15,15 @@
 # http://www.gnu.org/copyleft/gpl.html
 #
 
-package TWiki::Plugins::TreePlugin::FormatOutlineNodeFormatter;
-use base qw(TWiki::Plugins::TreePlugin::OutlineNodeFormatter);
+package Foswiki::::Plugins::TreePlugin::FormatOutlineNodeFormatter;
+use base qw(Foswiki::::Plugins::TreePlugin::OutlineNodeFormatter);
 
 use strict;
 use warnings;
 
-use TWiki::Plugins::TreePlugin::FormatHelper qw(spaceTopic loopReplaceRefData);
+use Foswiki::::Plugins::TreePlugin::FormatHelper qw(spaceTopic loopReplaceRefData);
 
-use TWiki::Func;
+use Foswiki::::Func;
 
 # class to format the nodes in a tree in a formatted outline
 #
@@ -35,7 +35,7 @@ sub new {
     bless( $this, $class );
     $this->data( "format", $format );
 
-    #Twiki:Func::writeDebug("format: ".$);
+    #Foswiki:::Func::writeDebug("format: ".$);
 
     return $this;
 }
@@ -56,7 +56,7 @@ sub formatNode {
     #my $res = $this->data("format"); #SL: was that 
     my $res =  $node->data("format"); #SL: we do that now
 
-    my $nodeLinkName = &TWiki::Plugins::TreePlugin::getLinkName($node);
+    my $nodeLinkName = &Foswiki::::Plugins::TreePlugin::getLinkName($node);
     return $nodeLinkName unless ($res);
 
     # Pseudo-variable substitutions
@@ -64,7 +64,7 @@ sub formatNode {
     # ... in fact pseudo-variable common with SEARCH was already done
 
     # Make linkable non-wiki-word namesuse strict;
-    my $spaceTopic = &TWiki::Plugins::TreePlugin::FormatHelper::spaceTopic( $node->data('topic') );
+    my $spaceTopic = &Foswiki::::Plugins::TreePlugin::FormatHelper::spaceTopic( $node->data('topic') );
     $res =~ s/\$spacetopic/$spaceTopic/g;
     #$res =~ s/\$topic/$node->name()/geo;
     $res =~ s/\$outnum/$this->formatOutNum($node)/geo;
@@ -73,7 +73,7 @@ sub formatNode {
 
     #SL: here were some crazy data substitution we've delegating that to the SEARCH itself
 
-    #SL: levelprefix allows rendering of bullet list using TWiki syntax thus enabling combination with TreeBrowserPlugin
+    #SL: levelprefix allows rendering of bullet list using Foswiki:: syntax thus enabling combination with TreeBrowserPlugin
     if ( defined( $this->data("levelprefix") ) ) {
         my $i = $level;
         while ( $i > 0 ) {

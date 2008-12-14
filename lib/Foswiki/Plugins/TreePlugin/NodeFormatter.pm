@@ -1,7 +1,7 @@
 #
 # Copyright (C) Slava Kozlov 2002 - All rights reserved
 #
-# TWiki extension  TWiki::Plugins::TreePlugin::NodeFormatter
+# Foswiki:: extension  Foswiki::::Plugins::TreePlugin::NodeFormatter
 #
 # This program is free software; you can redistribute it and/or
 # modify it under the terms of the GNU General Public License
@@ -15,7 +15,7 @@
 # http://www.gnu.org/copyleft/gpl.html
 #
 
-package TWiki::Plugins::TreePlugin::NodeFormatter;
+package Foswiki::::Plugins::TreePlugin::NodeFormatter;
 
 =pod
 

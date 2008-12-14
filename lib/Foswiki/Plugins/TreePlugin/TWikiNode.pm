@@ -15,8 +15,8 @@
 # http://www.gnu.org/copyleft/gpl.html
 #
 
-package TWiki::Plugins::TreePlugin::TWikiNode;
-use base qw(TWiki::Plugins::TreePlugin::Node);
+package Foswiki::Plugins::TreePlugin::TWikiNode;
+use base qw(Foswiki::Plugins::TreePlugin::Node);
 
 use strict;
 
@@ -71,7 +71,7 @@ sub toHTMLFormat {
     my $num       = shift || 0;
     my $level     = shift || 0;
 
-    #&TWiki::Func::writeDebug("toHTMLFormat: ".$this->name()) if $TWiki::Plugins::TreePlugin::debug;   
+    #&Foswiki::Func::writeDebug("toHTMLFormat: ".$this->name()) if $Foswiki::Plugins::TreePlugin::debug;   
 
     #This make sure we don't render a node more than once
     #thus preventing endless loop when dealing with inconsitant relationship 

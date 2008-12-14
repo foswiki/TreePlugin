@@ -1,7 +1,7 @@
 #
 # Copyright (C) XXXXXX 2001 - All rights reserved
 #
-# TWiki extension XXXXX
+# Foswiki:: extension XXXXX
 #
 # This program is free software; you can redistribute it and/or
 # modify it under the terms of the GNU General Public License
@@ -15,8 +15,8 @@
 # http://www.gnu.org/copyleft/gpl.html
 #
 
-package TWiki::Plugins::TreePlugin::ListNodeFormatter;
-use base qw(TWiki::Plugins::TreePlugin::NodeFormatter);
+package Foswiki::::Plugins::TreePlugin::ListNodeFormatter;
+use base qw(Foswiki::::Plugins::TreePlugin::NodeFormatter);
 
 #  class to format the nodes in a tree in a HTML list manner
 # for example: Node1<ul><li>Child1</li><li>Child2</li></ul>
@@ -61,7 +61,7 @@ sub formatNode {
 
     return "" if ( ! $this->isInsideLevelBounds( $level ) );
     
-    my $link = &TWiki::Plugins::TreePlugin::getLinkName($node);
+    my $link = &Foswiki::::Plugins::TreePlugin::getLinkName($node);
     my $label = $node->data('topic');
     return "[[$link][$label]]";
 }
