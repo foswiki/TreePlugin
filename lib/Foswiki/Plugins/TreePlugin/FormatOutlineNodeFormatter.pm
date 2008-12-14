@@ -15,15 +15,15 @@
 # http://www.gnu.org/copyleft/gpl.html
 #
 
-package Foswiki::::Plugins::TreePlugin::FormatOutlineNodeFormatter;
-use base qw(Foswiki::::Plugins::TreePlugin::OutlineNodeFormatter);
+package Foswiki::Plugins::TreePlugin::FormatOutlineNodeFormatter;
+use base qw(Foswiki::Plugins::TreePlugin::OutlineNodeFormatter);
 
 use strict;
 use warnings;
 
-use Foswiki::::Plugins::TreePlugin::FormatHelper qw(spaceTopic loopReplaceRefData);
+use Foswiki::Plugins::TreePlugin::FormatHelper qw(spaceTopic loopReplaceRefData);
 
-use Foswiki::::Func;
+use Foswiki::Func;
 
 # class to format the nodes in a tree in a formatted outline
 #
@@ -56,7 +56,7 @@ sub formatNode {
     #my $res = $this->data("format"); #SL: was that 
     my $res =  $node->data("format"); #SL: we do that now
 
-    my $nodeLinkName = &Foswiki::::Plugins::TreePlugin::getLinkName($node);
+    my $nodeLinkName = &Foswiki::Plugins::TreePlugin::getLinkName($node);
     return $nodeLinkName unless ($res);
 
     # Pseudo-variable substitutions
@@ -64,7 +64,7 @@ sub formatNode {
     # ... in fact pseudo-variable common with SEARCH was already done
 
     # Make linkable non-wiki-word namesuse strict;
-    my $spaceTopic = &Foswiki::::Plugins::TreePlugin::FormatHelper::spaceTopic( $node->data('topic') );
+    my $spaceTopic = &Foswiki::Plugins::TreePlugin::FormatHelper::spaceTopic( $node->data('topic') );
     $res =~ s/\$spacetopic/$spaceTopic/g;
     #$res =~ s/\$topic/$node->name()/geo;
     $res =~ s/\$outnum/$this->formatOutNum($node)/geo;

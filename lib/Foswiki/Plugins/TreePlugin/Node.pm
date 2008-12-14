@@ -15,7 +15,7 @@
 # http://www.gnu.org/copyleft/gpl.html
 #
 
-package Foswiki::::Plugins::TreePlugin::Node;
+package Foswiki::Plugins::TreePlugin::Node;
 
 use strict;
 
@@ -66,7 +66,7 @@ sub add_child {
     my ( $this, $child ) = @_;
 
     #   should one check for cirrect type?
-    #   return 0 unless (isa($child, 'Foswiki::::Plugins::TreePlugin::Node'));
+    #   return 0 unless (isa($child, 'Foswiki::Plugins::TreePlugin::Node'));
     $child->parent($this);
     push @{ $this->{_children} }, $child;
 }

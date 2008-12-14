@@ -15,8 +15,8 @@
 # http://www.gnu.org/copyleft/gpl.html
 #
 
-package Foswiki::::Plugins::TreePlugin::OutlineNodeFormatter;
-use base qw(Foswiki::::Plugins::TreePlugin::NodeFormatter);
+package Foswiki::Plugins::TreePlugin::OutlineNodeFormatter;
+use base qw(Foswiki::Plugins::TreePlugin::NodeFormatter);
 
 use vars qw($RootOnum $OnumDelim);
 
@@ -82,7 +82,7 @@ sub formatNode {
     return "" if ( ! $this->isInsideLevelBounds( $level ) );
 
     # no formatting applied
-    return &Foswiki::::Plugins::TreePlugin::getLinkName($node);
+    return &Foswiki::Plugins::TreePlugin::getLinkName($node);
 }
 
 sub formatBranch {

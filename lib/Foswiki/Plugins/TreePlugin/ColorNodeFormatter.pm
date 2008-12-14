@@ -1,7 +1,7 @@
 #
 # Copyright (C) Slava Kozlov 2002 - All rights reserved
 #
-# Foswiki:: extension Foswiki::::Plugins::TreePlugin::ColorNodeFormatter
+# Foswiki:: extension Foswiki::Plugins::TreePlugin::ColorNodeFormatter
 #
 # This program is free software; you can redistribute it and/or
 # modify it under the terms of the GNU General Public License
@@ -15,8 +15,8 @@
 # http://www.gnu.org/copyleft/gpl.html
 #
 
-package Foswiki::::Plugins::TreePlugin::ColorNodeFormatter;
-use base qw(Foswiki::::Plugins::TreePlugin::FormatOutlineNodeFormatter);
+package Foswiki::Plugins::TreePlugin::ColorNodeFormatter;
+use base qw(Foswiki::Plugins::TreePlugin::FormatOutlineNodeFormatter);
 
 # class to format the nodes in a tree in an
 
