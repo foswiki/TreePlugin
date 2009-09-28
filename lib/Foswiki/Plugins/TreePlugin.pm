@@ -102,6 +102,7 @@ sub HandleTreeTag
     
     my $nodiv = $params->{'nodiv'} || '0';
     my $attrWeb = $params->{'web'} || $aWeb || '';
+    &Foswiki::Func::writeDebug("--- $attrWeb ".join(',', keys(%$params))) if $debug;
     #Get root topic id in the form =web.topic=
     my $rootTopicId = $params->{'topic'} ? "$attrWeb.".$params->{'topic'} : $RootLabel; 
   
@@ -215,7 +216,7 @@ sub HandleTreeTag
     my %nodes = ();
 
     
-    &Foswiki::Func::writeDebug("First loop") if $debug;    
+    &Foswiki::Func::writeDebug("First loop $attrWeb") if $debug;    
     
     #### Parse SEARCH results and build up tree structure    
 
@@ -295,6 +296,7 @@ sub HandleTreeTag
     $webRoot->name(" ") if (defined $webRoot);    # If using fake root change root's name so it don't show up, hack
     my $root= defined $webRoot ? $webRoot : $nodes{$rootTopicId}; #Get the root object fake web root or actual topic root 
 
+
     # format the tree & parse TWiki tags and rendering
     my $renderedTree = $root->toHTMLFormat($formatter);
 
@@ -324,6 +326,9 @@ sub HandleTreeTag
         $renderedTree =~ s/\$Index/$Index++;$Index/egi;
     }
     
+    #TODO: workaround for Item2048 - need to squash this at the source.
+    $renderedTree =~ s/\n\n+/\n/g;
+
     &Foswiki::Func::writeDebug($renderedTree) if ($debug==2);    
     
     return $renderedTree;
