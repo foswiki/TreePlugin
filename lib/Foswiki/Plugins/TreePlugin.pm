@@ -34,13 +34,14 @@ use Foswiki::Plugins::TreePlugin::ImgNodeFormatter;
 
 # =========================
 use vars qw(
-  $gWeb $gTopic $user $installWeb $VERSION $debug $INTREE
+  $gWeb $gTopic $user $installWeb $VERSION $RELEASE $debug $INTREE
   %FormatMap $RootLabel $AGdebugmsg $pluginName $workAreaDir
   $noCache
 );
 
 $pluginName = 'TreePlugin';
-$VERSION = '1.8';
+$VERSION = '$Rev$';
+$RELEASE = '1.9';
 $RootLabel = "_RootLabel_";    # what we use to label the root of a tree if not a topic
 
 # =========================
