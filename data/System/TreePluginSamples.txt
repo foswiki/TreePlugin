@@ -1,10 +1,11 @@
+%META:TOPICPARENT{name="TreePlugin"}%
 %META:TOPICINFO{author="BaseUserMapping_333" date="1229284277" format="1.1" version="1.2"}%
 ---+!! %SYSTEMWEB%.TreePlugin Samples
 
 %TOC%
 
 #SampleLists
-__Note:__ The links under <nop>TreeTop (included from HeadingOutlineSample) are not functional. They are only for demonstrational purpooses only. %BR%
+__Note:__ The links under <nop>TreeTop (included from TreePluginHeadingOutlineSample) are not functional. They are only for demonstrational purpooses only. %BR%
 __Note:__ The children of each tree are presented in alphabetical order which is why a "Three" topic always preceeds a "Two" topic.  
 
 
@@ -57,7 +58,7 @@ This is also the default for the tag (when formatting is not set).
 %<nop>TREEVIEW{topic="TreeTop" bookview="on"}%
 </code>
 
-Displays tree in bookview mode. See TreeBookviewOutlineSample.
+Displays tree in bookview mode. See TreePluginBookviewOutlineSample.
 
 
 
@@ -132,7 +133,7 @@ _In the rendered version, clicking on the outline numbers will display that topi
 %<nop>TREEVIEW{topic="TreeTop" formatting="hlist"}%
 </code>
 
-See HeadingOutlineSample.
+See TreePluginHeadingOutlineSample.
 
 ----
 

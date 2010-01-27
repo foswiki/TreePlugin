@@ -1,6 +1,7 @@
-data/Sandbox/HeadingOutlineSample.txt 0644
+data/System/TreePluginHeadingOutlineSample.txt 0644
+data/System/TreePluginBookviewOutlineSample.txt 0644
 data/System/TreePlugin.txt 0644
-data/Sandbox/TreePluginSamples.txt 0644
+data/System/TreePluginSamples.txt 0644
 lib/Foswiki/Plugins/TreePlugin.pm 0644
 lib/Foswiki/Plugins/TreePlugin/ColorNodeFormatter.pm 0644
 lib/Foswiki/Plugins/TreePlugin/FormatHelper.pm 0644

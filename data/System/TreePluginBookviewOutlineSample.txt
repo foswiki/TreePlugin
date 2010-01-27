@@ -1,4 +1,4 @@
-%META:TOPICPARENT{name="TreePluginSamples"}%
+%META:TOPICPARENT{name="TreePlugin"}%
 ---+ TreePlugin Bookview Outline Sample
 
 <table width="100%" border="0" cellspacing="0" cellpadding="0">

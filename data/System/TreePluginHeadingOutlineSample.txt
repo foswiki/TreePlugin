@@ -1,4 +1,4 @@
-%META:TOPICPARENT{name="TreePluginSamples"}%
+%META:TOPICPARENT{name="TreePlugin"}%
 <h1><a name ="1_TreeTop"> </a> 1 <a href="">TreeTop</a> </h1>
 <h2> 1.1 <a href="">TheOne</a> </h2>
 Summary for TheOne
