@@ -15,7 +15,7 @@
 | *Parameter* | *Description* | *Default* |
 | =web= | The web to search. | current web |
 | =topic= | Specify tree's root topic. If none the entire web topics' tree is generated | none |
-| =formatting= | Specify the formatting method <br /> =ullist= is a &lt;ul&gt;-list, see [[Plugins.TreePluginSamples#UlList][sample UL lists]] <br /> =ollist= is a &lt;ol&gt;-list, see [[Plugins.TreePluginSamples#OlList][sample OL lists]] <br /> =outline= is an outline list, see [[Plugins.TreePluginSamples#SampleOutlines][sample Outlines]] <br /> =hlist= is a &lt;h _n_ &gt;-list of section heads, see [[Plugins.TreePluginSamples#SampleHList][sample Headlines]] <br /> =coloroutline:colorlist= is an outline formatting with level values turned into colors, see [[Plugins.TreePluginSamples#SampleNestedTables][sample Nested tables]]. Example: =formatting="coloroutline:#ffeeff,#eeffee,#ffffee,#eeeeff,#ffeeee,#eeffff"= <br /> =imageoutline:mode= is a way to incorporate images into the outline format, specifically to display thread-like and folder views, see [[Plugins.TreePluginSamples#SampleImageTrees][sample Image Trees]]. The general format is: imageoutline: _mode_ : _images_ : _imageformat_. Example: =formatting="imageoutline:thread"= or =formatting="imageoutline:thread:I.gif,white.gif,T.gif,L.gif:&lt;img src=\"$image\" border=\"0\"&gt;"=. | =outline= |
+| =formatting= | Specify the formatting method <br /> =ullist= is a &lt;ul&gt;-list, see [[TreePluginSamples#UlList][sample UL lists]] <br /> =ollist= is a &lt;ol&gt;-list, see [[TreePluginSamples#OlList][sample OL lists]] <br /> =outline= is an outline list, see [[TreePluginSamples#SampleOutlines][sample Outlines]] <br /> =hlist= is a &lt;h _n_ &gt;-list of section heads, see [[TreePluginSamples#SampleHList][sample Headlines]] <br /> =coloroutline:colorlist= is an outline formatting with level values turned into colors, see [[TreePluginSamples#SampleNestedTables][sample Nested tables]]. Example: =formatting="coloroutline:#ffeeff,#eeffee,#ffffee,#eeeeff,#ffeeee,#eeffff"= <br /> =imageoutline:mode= is a way to incorporate images into the outline format, specifically to display thread-like and folder views, see [[TreePluginSamples#SampleImageTrees][sample Image Trees]]. The general format is: imageoutline: _mode_ : _images_ : _imageformat_. Example: =formatting="imageoutline:thread"= or =formatting="imageoutline:thread:I.gif,white.gif,T.gif,L.gif:&lt;img src=\"$image\" border=\"0\"&gt;"=. | =outline= |
 | =excludetopic= | Same meaning as %SYSTEMWEB%.VarSEARCH =excludetopic=. Topics with excluded parent or processed like topic without parent. | none |
 | =includetopic= | Same meaning as %SYSTEMWEB%.VarSEARCH =topic=. Can improve processing time. | none |
 | =startlevel= | The depth of the tree to start showing nodes from. To hide the root node, supply =startlevel="1"= (root is level 0). The displayed node depths are relative to the root topic. | =0= or =1= if =topic= is not specified |
@@ -34,9 +34,9 @@
 ---++ Samples
 
 See the following page for sample usage and output:
-   * [[%SYSTEMWEB%.%TOPIC%Samples]]
-   * [[%SYSTEMWEB%.%TOPIC%HeadingOutlineSample]]
-   * [[%SYSTEMWEB%.%TOPIC%BookviewOutlineSample]]
+   * [[%TOPIC%Samples]]
+   * [[%TOPIC%HeadingOutlineSample]]
+   * [[%TOPIC%BookviewOutlineSample]]
 
 ---+++ Usage
 
@@ -70,7 +70,7 @@ Specify plug-in settings in =LocalSite.cfg=:
 
 ---++ Plugin Info
 
-| Authors: | SlavaKozlov (alpha release), [[Foswiki:Main.StephaneLenclud][Stephane Lenclud]] (2006-2008)  |
+| Authors: | TWiki:Main.SlavaKozlov (alpha release), [[Foswiki:Main.StephaneLenclud][Stephane Lenclud]] (2006-2008)  |
 | Copyright ©: | Copyright (C) 2002 Slava Kozlov. All Rights Reserved. |
 | License: | [[http://www.gnu.org/copyleft/gpl.html][GPL]] |
 | Dependencies: | None |
