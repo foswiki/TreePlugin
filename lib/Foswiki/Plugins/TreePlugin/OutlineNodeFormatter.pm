@@ -16,7 +16,8 @@
 #
 
 package Foswiki::Plugins::TreePlugin::OutlineNodeFormatter;
-use base qw(Foswiki::Plugins::TreePlugin::NodeFormatter);
+use Foswiki::Plugins::TreePlugin::NodeFormatter;
+our @ISA = qw( Foswiki::Plugins::TreePlugin::NodeFormatter );
 
 use vars qw($RootOnum $OnumDelim);
 

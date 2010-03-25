@@ -16,7 +16,8 @@
 #
 
 package Foswiki::Plugins::TreePlugin::HOutlineNodeFormatter;
-use base qw(Foswiki::Plugins::TreePlugin::FormatOutlineNodeFormatter);
+use Foswiki::Plugins::TreePlugin::FormatOutlineNodeFormatter;
+our @ISA = qw( Foswiki::Plugins::TreePlugin::FormatOutlineNodeFormatter );
 
 # class to format the nodes in a tree in an outline format
 # for example: Node1<ul><li>Child1</li><li>Child2</li></ul>

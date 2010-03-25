@@ -16,7 +16,8 @@
 #
 
 package Foswiki::Plugins::TreePlugin::ImgNodeFormatter;
-use base qw(Foswiki::Plugins::TreePlugin::FormatOutlineNodeFormatter);
+use Foswiki::Plugins::TreePlugin::FormatOutlineNodeFormatter;
+our @ISA = qw( Foswiki::Plugins::TreePlugin::FormatOutlineNodeFormatter );
 
 use Foswiki::Plugins::TreePlugin;
 

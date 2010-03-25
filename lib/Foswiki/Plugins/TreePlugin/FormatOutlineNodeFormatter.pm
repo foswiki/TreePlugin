@@ -16,7 +16,8 @@
 #
 
 package Foswiki::Plugins::TreePlugin::FormatOutlineNodeFormatter;
-use base qw(Foswiki::Plugins::TreePlugin::OutlineNodeFormatter);
+use Foswiki::Plugins::TreePlugin::OutlineNodeFormatter;
+our @ISA = qw( Foswiki::Plugins::TreePlugin::OutlineNodeFormatter );
 
 use strict;
 use warnings;

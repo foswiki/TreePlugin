@@ -16,7 +16,8 @@
 #
 
 package Foswiki::Plugins::TreePlugin::ColorNodeFormatter;
-use base qw(Foswiki::Plugins::TreePlugin::FormatOutlineNodeFormatter);
+use Foswiki::Plugins::TreePlugin::FormatOutlineNodeFormatter;
+our @ISA = qw( Foswiki::Plugins::TreePlugin::FormatOutlineNodeFormatter );
 
 # class to format the nodes in a tree in an
 

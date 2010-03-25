@@ -16,7 +16,8 @@
 #
 
 package Foswiki::Plugins::TreePlugin::ListNodeFormatter;
-use base qw(Foswiki::Plugins::TreePlugin::NodeFormatter);
+use Foswiki::Plugins::TreePlugin::NodeFormatter;
+our @ISA = qw( Foswiki::Plugins::TreePlugin::NodeFormatter );
 
 #  class to format the nodes in a tree in a HTML list manner
 # for example: Node1<ul><li>Child1</li><li>Child2</li></ul>

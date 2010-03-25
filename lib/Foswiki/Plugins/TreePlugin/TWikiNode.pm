@@ -16,7 +16,8 @@
 #
 
 package Foswiki::Plugins::TreePlugin::TWikiNode;
-use base qw(Foswiki::Plugins::TreePlugin::Node);
+use Foswiki::Plugins::TreePlugin::Node;
+our @ISA = qw( Foswiki::Plugins::TreePlugin::Node );
 
 use strict;
 
