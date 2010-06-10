@@ -13,7 +13,7 @@ lib/Foswiki/Plugins/TreePlugin/Node.pm 0644
 lib/Foswiki/Plugins/TreePlugin/NodeFormatter.pm 0644
 lib/Foswiki/Plugins/TreePlugin/OutlineNodeFormatter.pm 0644
 lib/Foswiki/Plugins/TreePlugin/TWikiNode.pm 0644
-lib/Foswiki/Plugins/TreePlugin/test.tar.gz 0644
+#lib/Foswiki/Plugins/TreePlugin/test.tar.gz 0644
 pub/System/TreePlugin/I.gif 0644
 pub/System/TreePlugin/L.gif 0644
 pub/System/TreePlugin/T.gif 0644
