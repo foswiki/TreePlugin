@@ -564,13 +564,13 @@ sub setFormatter {
     elsif ( $name eq "hlist" ) {
         $formatter =
           new Foswiki::Plugins::TreePlugin::HOutlineNodeFormatter(
-            "<h\$level> \$outnum \$web.\$topic </h\$level> \$summary");
+            "<h\$level> \$outnum [[\$web.\$topic][\$topic]] </h\$level> \$summary");
     }
     else {
         $name = "outline";
         $formatter =
           new Foswiki::Plugins::TreePlugin::FormatOutlineNodeFormatter(
-            "\$outnum \$web.\$topic <br \/>");
+            "\$outnum [[\$web.\$topic][\$topic]] <br \/>");
     }
 
     # remember and return
