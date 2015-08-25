@@ -1,5 +1,5 @@
 %META:TOPICPARENT{name="TreePlugin"}%
-%META:TOPICINFO{author="BaseUserMapping_333" date="1229284277" format="1.1" version="1.2"}%
+%META:TOPICINFO{author="ProjectContributor" date="1440477332" format="1.1" version="1.2"}%
 ---+!! %SYSTEMWEB%.TreePlugin Samples
 
 %TOC%
@@ -328,6 +328,9 @@ format="<table border=0 cellspacing=0 cellpadding=0><tr><td nowrap>
 ---+++ Folder trees
 
 These are pretty ugly (the default relies on Apache icons). But if you need it...
+<div class="foswikiHelp">%X% in order to access these icons, your Apache
+configuration must enable access to the shared icons directory.  See
+[[TreePlugin#Plugin_Installation_Instructions]]</div>
 
 <verbatim>
 %TREEVIEW{topic="TreeTop" stoplevel="3"

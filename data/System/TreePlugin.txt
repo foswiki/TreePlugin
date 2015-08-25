@@ -1,3 +1,4 @@
+%META:TOPICINFO{author="ProjectContributor" date="1440477332" format="1.1" version="1"}%
 %META:TOPICPARENT{name="Plugins"}%
 ---+!! Tree Plugin
 <!--
@@ -68,16 +69,25 @@ Specify plug-in settings in =LocalSite.cfg=:
 
 %$INSTALL_INSTRUCTIONS%
 
+<div class="foswikiHelp">%X% in order to access the default icons used by this
+extensions, your Apache configuration must enable access to the shared icons directory. (Actual
+location may differ between linux versions)
+<verbatim>
+Alias /icons "/usr/share/apache2/icons"
+</verbatim>
+</div>
+
 ---++ Plugin Info
 
-| Authors: | TWiki:Main.SlavaKozlov (alpha release), [[Foswiki:Main.StephaneLenclud][Stephane Lenclud]] (2006-2008)  |
-| Copyright ©: | Copyright (C) 2002 Slava Kozlov. All Rights Reserved. |
+| Authors: | TWiki:Main.SlavaKozlov (alpha release), [[Foswiki:Main.StephaneLenclud][Stephane Lenclud]] (2006-2008), Fowiki Contributors (2008-2015) |
+| Copyright &copy;: | Copyright &copy; 2002 Slava Kozlov. All Rights Reserved.<br /> Copyright &copy;: Foswiki Contributors (2008-2015) |
 | License: | [[http://www.gnu.org/copyleft/gpl.html][GPL]] |
 | Dependencies: | None |
 | CPAN Dependencies: | none _(test package relies on Wiki:PerlUnit)_ |
 | Version: | %$VERSION% |
 | Release: | %$RELEASE% |
 | Change History: | <!-- specify latest version first --> |
+| 25 Aug 2015 | 1.92 - Remove copyright symbol from docs. Remove SVN revision numbering. |
 | 27 Jan 2010 | 1.91 - Documentation tweaks. By [[Foswiki:Main.PaulHarvey]] |
 | 11 Nov 2009 | 1.9 - Fixed version numbering for configure. By [[Foswiki:Main.IngoKappler][Ingo Kappler]] |
 | 12 Dec 2008 | 1.8 - Foswiki port. By [[Foswiki:Main.StephaneLenclud][Stephane Lenclud]] |
@@ -104,11 +114,11 @@ Specify plug-in settings in =LocalSite.cfg=:
 
 __Related Topics:__ %SYSTEMWEB%.DefaultPreferences, %USERSWEB%.SitePreferences, [[%SYSTEMWEB%.Plugins][Plugins]]
 
-%META:FILEATTACHMENT{name="oT.gif" attr="h" autoattached="1" comment="" date="1158432770" path="oT.gif" size="879" user="UnknownUser" version=""}%
-%META:FILEATTACHMENT{name="I.gif" attr="h" autoattached="1" comment="" date="1158432770" path="I.gif" size="869" user="UnknownUser" version=""}%
-%META:FILEATTACHMENT{name="white.gif" attr="h" autoattached="1" comment="" date="1158432770" path="white.gif" size="56" user="UnknownUser" version=""}%
-%META:FILEATTACHMENT{name="pL.gif" attr="h" autoattached="1" comment="" date="1158432770" path="pL.gif" size="880" user="UnknownUser" version=""}%
-%META:FILEATTACHMENT{name="oL.gif" attr="h" autoattached="1" comment="" date="1158432770" path="oL.gif" size="874" user="UnknownUser" version=""}%
-%META:FILEATTACHMENT{name="L.gif" attr="h" autoattached="1" comment="" date="1158432770" path="L.gif" size="864" user="UnknownUser" version=""}%
-%META:FILEATTACHMENT{name="T.gif" attr="h" autoattached="1" comment="" date="1158432770" path="T.gif" size="873" user="UnknownUser" version=""}%
-%META:FILEATTACHMENT{name="pT.gif" attr="h" autoattached="1" comment="" date="1158432770" path="pT.gif" size="883" user="UnknownUser" version=""}%
+%META:FILEATTACHMENT{name="oT.gif" attr="h" comment="" date="1440477332" size="879" user="ProjectContributor" version="1"}%
+%META:FILEATTACHMENT{name="I.gif" attr="h" comment="" date="1440477332" size="869" user="ProjectContributor" version="1"}%
+%META:FILEATTACHMENT{name="white.gif" attr="h" comment="" date="1440477332" size="56" user="ProjectContributor" version="1"}%
+%META:FILEATTACHMENT{name="pL.gif" attr="h" comment="" date="1440477332" size="880" user="ProjectContributor" version="1"}%
+%META:FILEATTACHMENT{name="oL.gif" attr="h" comment="" date="1440477332" size="874" user="ProjectContributor" version="1"}%
+%META:FILEATTACHMENT{name="L.gif" attr="h" comment="" date="1440477332" size="864" user="ProjectContributor" version="1"}%
+%META:FILEATTACHMENT{name="T.gif" attr="h" comment="" date="1440477332" size="873" user="ProjectContributor" version="1"}%
+%META:FILEATTACHMENT{name="pT.gif" attr="h" comment="" date="1440477332" size="883" user="ProjectContributor" version="1"}%

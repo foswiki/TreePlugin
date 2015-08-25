@@ -1,0 +1,10 @@
+*,v
+*,pfv
+*.gz
+/TreePlugin.md5
+/TreePlugin.sha1
+/TreePlugin.tgz
+/TreePlugin.txt
+/TreePlugin.zip
+/TreePlugin_installer
+/TreePlugin_installer.pl
