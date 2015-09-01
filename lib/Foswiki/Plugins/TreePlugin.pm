@@ -2,7 +2,7 @@
 # TWiki ($wikiversion has version info)
 #
 # Copyright (C) 2002 Slava Kozlov,
-# Copyright (C) 2006-2008 Stéphane Lenclud,
+# Copyright (C) 2006-2008 Stephane Lenclud,
 # Copyright (C) 2008-2015 Foswiki Contributors
 #
 # This program is free software; you can redistribute it and/or
@@ -43,8 +43,8 @@ use vars qw(
 our $pluginName = 'TreePlugin';
 our $SHORTDESCRIPTION =
 "Renders topics' parent-child relationships as hierarchical tree view. Useful for dynamic site maps and threads.";
-our $VERSION = 1.92;
-our $RELEASE = '1.92';
+our $VERSION = 1.93;
+our $RELEASE = '1.93';
 our $RootLabel =
   "_RootLabel_";    # what we use to label the root of a tree if not a topic
 
