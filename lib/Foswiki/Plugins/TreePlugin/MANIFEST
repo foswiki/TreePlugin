@@ -4,6 +4,7 @@ data/System/TreePlugin.txt 0644
 data/System/VarTREEVIEW.txt 0644
 data/System/TreePluginSamples.txt 0644
 lib/Foswiki/Plugins/TreePlugin.pm 0644
+lib/Foswiki/Plugins/TreePlugin/Config.spec 0644
 lib/Foswiki/Plugins/TreePlugin/ColorNodeFormatter.pm 0644
 lib/Foswiki/Plugins/TreePlugin/FormatHelper.pm 0644
 lib/Foswiki/Plugins/TreePlugin/FormatOutlineNodeFormatter.pm 0644

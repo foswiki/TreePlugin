@@ -1,4 +1,4 @@
-%META:TOPICINFO{author="ProjectContributor" date="1441072486" format="1.1" version="1"}%
+%META:TOPICINFO{author="ProjectContributor" date="1441221081" format="1.1" version="1"}%
 %META:TOPICPARENT{name="Plugins"}%
 ---+!! Tree Plugin
 <!--
@@ -47,7 +47,9 @@ For instance if you know that every topic in your tree has a common prefix you c
 
 ---++ Plugin Settings
 
-Specify plug-in settings in =LocalSite.cfg=:
+The following _Expert_ settings are settable in the =bin/configure=
+interface.  They are located in the =Extensions->TreePlugin= tab, provided
+that _Expert_ settings are enabled.   They can also be manually added to =lib/LocalSite.cfg=:
    * Set ={Plugins}{$pluginName}{Debug}= to =1= to enable debug output. Set to =2= to get a lot more debug output.
    * Set ={Plugins}{$pluginName}{NoCache}= to =1= to disable caching mechanism. Intended for development purposes only.
 
@@ -68,13 +70,12 @@ Alias /icons "/usr/share/apache2/icons"
 | Authors: | TWiki:Main.SlavaKozlov (alpha release), [[Foswiki:Main.StephaneLenclud][Stephane Lenclud]] (2006-2008), Fowiki Contributors (2008-2015) |
 | Copyright &copy;: | Copyright &copy; 2002 Slava Kozlov. All Rights Reserved.<br /> Copyright &copy;: Foswiki Contributors (2008-2015) |
 | License: | [[http://www.gnu.org/copyleft/gpl.html][GPL]] |
-| Dependencies: | None |
-| CPAN Dependencies: | none _(test package relies on Wiki:PerlUnit)_ |
 | Version: | %$VERSION% |
 | Release: | %$RELEASE% |
 | Change History: | <!-- specify latest version first --> |
-| 01 Sep 2015 | 1.93 - Foswikitask:Item11352 Fix docs on combining with Foswiki:Extensions.TreeBrowserPlugin<br/>\
-                       Foswikitask:Item13655 Fix missing TOPICINFO macros, remove high character in code copyright. |
+| 02 Sep 2015 | 1.93 - Foswikitask:Item11352 - Fix docs on combining with Foswiki:Extensions.TreeBrowserPlugin<br/>\
+                       Foswikitask:Item13655 - Fix missing TOPICINFO macros, remove high character in code copyright.<br/>\
+                       Foswikitask:Item13661 - Add missing Config.spec file. |
 | 25 Aug 2015 | 1.92 - Remove copyright symbol from docs. Remove SVN revision numbering. |
 | 27 Jan 2010 | 1.91 - Documentation tweaks. By [[Foswiki:Main.PaulHarvey]] |
 | 11 Nov 2009 | 1.9 - Fixed version numbering for configure. By [[Foswiki:Main.IngoKappler][Ingo Kappler]] |
@@ -96,17 +97,14 @@ Alias /icons "/usr/share/apache2/icons"
 | 26 Jul 2006: | 0.4 - [[Foswiki:Main.SteffenPoulsen][Steffen Poulsen]]: Ported to T* 4 (Dakar). Leading text removed, less warnings, no double bracket links, CSS classnames around output. |
 | 15 Feb 2002 | Alpha (0.2) release |
 | 08 Feb 2002 | Internal (0.1) release |
-| Home: | Foswiki:Extensions.%TOPIC% |
-| Support: | Foswiki:Support.%TOPIC% |
-| Development: | Foswiki:Development.%TOPIC% |
 
 __Related Topics:__ %SYSTEMWEB%.DefaultPreferences, %USERSWEB%.SitePreferences, [[%SYSTEMWEB%.Plugins][Plugins]]
 
-%META:FILEATTACHMENT{name="oT.gif" attr="h" comment="" date="1441072486" size="879" user="ProjectContributor" version="1"}%
-%META:FILEATTACHMENT{name="I.gif" attr="h" comment="" date="1441072486" size="869" user="ProjectContributor" version="1"}%
-%META:FILEATTACHMENT{name="white.gif" attr="h" comment="" date="1441072486" size="56" user="ProjectContributor" version="1"}%
-%META:FILEATTACHMENT{name="pL.gif" attr="h" comment="" date="1441072486" size="880" user="ProjectContributor" version="1"}%
-%META:FILEATTACHMENT{name="oL.gif" attr="h" comment="" date="1441072486" size="874" user="ProjectContributor" version="1"}%
-%META:FILEATTACHMENT{name="L.gif" attr="h" comment="" date="1441072486" size="864" user="ProjectContributor" version="1"}%
-%META:FILEATTACHMENT{name="T.gif" attr="h" comment="" date="1441072486" size="873" user="ProjectContributor" version="1"}%
-%META:FILEATTACHMENT{name="pT.gif" attr="h" comment="" date="1441072486" size="883" user="ProjectContributor" version="1"}%
+%META:FILEATTACHMENT{name="oT.gif" attr="h" comment="" date="1441221081" size="879" user="ProjectContributor" version="1"}%
+%META:FILEATTACHMENT{name="I.gif" attr="h" comment="" date="1441221081" size="869" user="ProjectContributor" version="1"}%
+%META:FILEATTACHMENT{name="white.gif" attr="h" comment="" date="1441221081" size="56" user="ProjectContributor" version="1"}%
+%META:FILEATTACHMENT{name="pL.gif" attr="h" comment="" date="1441221081" size="880" user="ProjectContributor" version="1"}%
+%META:FILEATTACHMENT{name="oL.gif" attr="h" comment="" date="1441221081" size="874" user="ProjectContributor" version="1"}%
+%META:FILEATTACHMENT{name="L.gif" attr="h" comment="" date="1441221081" size="864" user="ProjectContributor" version="1"}%
+%META:FILEATTACHMENT{name="T.gif" attr="h" comment="" date="1441221081" size="873" user="ProjectContributor" version="1"}%
+%META:FILEATTACHMENT{name="pT.gif" attr="h" comment="" date="1441221081" size="883" user="ProjectContributor" version="1"}%
